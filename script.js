@@ -22,3 +22,14 @@ function currentDay (){
     
 }
 currentDay()                                    // calling the function 
+
+
+// this functions is delcared to update each hour text aret with a color base on current time 
+function hourUpdater(){
+    var currentHour = dayjs().hour();
+    $("#textArea9am").addClass("present");   // used the css class present to add the coolor to the present time block 
+
+    console.log(currentHour);
+}
+
+hourUpdater()    
