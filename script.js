@@ -9,11 +9,23 @@ $(".saveBtn").on("click", function () {
 
   console.log(textvalue); // consologing the input on text area
 
-  localStorage.setItem(key, textvalue); // this is to store data to local storage 
+  localStorage.setItem(key, textvalue); // this is to store data to local storage
 });
 
+// this is the cuurent hour info declared to be access in global
+var currentHour = dayjs().hour();
+console.log(currentHour);
 
-
+// each time block id caller to keep the text displayed in the description text area
+$(".time-block").each(function () {
+  $(this).children(".description").val(localStorage.getItem(this.id)); // for each time block the description is called from local storage and displayed
+  var hour = parseInt(this.id.substring(4));
+  if (hour < currentHour) {
+    // loop function to determine current hour, past and future
+    $(this).addClass("past");
+  }
+  console.log(hour);
+});
 
 // This code is displaying current date utilizing dayJs
 function currentDay() {
@@ -24,7 +36,7 @@ function currentDay() {
 }
 currentDay(); // calling the function
 
-// this functions is delcared to update each hour text aret with a color base on current time
+/* // this functions is delcared to update each hour text aret with a color base on current time
 function hourUpdater() {
   var currentHour = dayjs().hour();
   $("#textArea9am").addClass("present"); // used the css class present to add the coolor to the present time block
@@ -32,4 +44,4 @@ function hourUpdater() {
   console.log(currentHour);
 }
 
-hourUpdater();
+hourUpdater(); */
