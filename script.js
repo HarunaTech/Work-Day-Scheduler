@@ -4,12 +4,12 @@ $(".saveBtn").on("click", function () {
 
   // this will grab the value using siblings method, make it specific by using class name and description (relative to line 40 html)
   // "$(this)" is used to get/display the content while the (".description") is used get class from html (relative to line 40 html)
-
+  var key = this.parentElement.id;
   var textvalue = $(this).siblings(".description").val(); // this will display the text/content written in textArea in the console
 
   console.log(textvalue); // consologing the input on text area
 
- 
+  localStorage.setItem(key, textvalue); // this is to store data to local storage 
 });
 
 
