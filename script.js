@@ -8,7 +8,12 @@ $(".saveBtn").on("click", function () {
   var textvalue = $(this).siblings(".description").val(); // this will display the text/content written in textArea in the console
 
   console.log(textvalue); // consologing the input on text area
+
+ 
 });
+
+
+
 
 // This code is displaying current date utilizing dayJs
 function currentDay() {
