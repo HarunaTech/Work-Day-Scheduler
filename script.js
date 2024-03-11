@@ -20,8 +20,8 @@ console.log(currentHour);
 $(".time-block").each(function () {
   $(this).children(".description").val(localStorage.getItem(this.id)); // for each time block the description is called from local storage and displayed
   var hour = parseInt(this.id.substring(4));
+  // loop function to determine current hour, past and future
   if (hour < currentHour) {
-    // loop function to determine current hour, past and future
     $(this).addClass("past");
   }
   console.log(hour);
